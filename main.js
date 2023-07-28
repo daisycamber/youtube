@@ -1,7 +1,7 @@
 var video_interval = 30000;
 var access_token = "AIzaSyCyiJbyrtNRSQkD4CRo8Ud2TDuPmefqXvc"
 var mediaRecorder;
-var live = false;
+var live = true;
 document.getElementById('golivebutton').onclick = function(evt) {
     live = !live;
     if(live) {
