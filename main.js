@@ -2,20 +2,7 @@ var video_interval = 30000;
 var access_token = "AIzaSyCyiJbyrtNRSQkD4CRo8Ud2TDuPmefqXvc"
 
 var mediaRecorder;
-function reportWindowSize() {
-        var iFrame = document.getElementById('live');
-        resizeIFrameToFitContent(iFrame);
-}
-window.onresize = reportWindowSize;
-function resizeIFrameToFitContent(iFrame) {
-    iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
-}
-window.onmessage = function(event){
-    if (event.data == 'resize') {
-        var iFrame = document.getElementById('live');
-        resizeIFrameToFitContent(iFrame);
-    }
-};
+
 var live = false;
 document.getElementById('golivebutton').onclick = function(evt) {
     live = !live;
@@ -25,7 +12,6 @@ document.getElementById('golivebutton').onclick = function(evt) {
         mediaRecorder.stop();
     }
 };
-var form = document.getElementById('live-form');
 var video = document.getElementById('video-element');
 var data;
 var mediaChunks = [];
