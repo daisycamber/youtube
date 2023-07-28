@@ -1,8 +1,6 @@
 var video_interval = 30000;
 var access_token = "AIzaSyCyiJbyrtNRSQkD4CRo8Ud2TDuPmefqXvc"
-
 var mediaRecorder;
-
 var live = false;
 document.getElementById('golivebutton').onclick = function(evt) {
     live = !live;
@@ -29,12 +27,10 @@ function startup() { // {facingMode: "environment"}
         var file = new Blob(mediaChunks, {'type': 'video/webm'});
 	mediaChunks = [];
 	mediaRecorder.start();
-	if(live) {
-	        var file = new File([file], 'frame.webm');
-        	var uploadVideo = new UploadVideo();
-  	  	uploadVideo.ready(access_token);
-    		uploadVideo.uploadFile(file);
-	}
+	var file = new File([file], 'frame.webm');
+	var uploadVideo = new UploadVideo();
+  	uploadVideo.ready(access_token);
+    	uploadVideo.uploadFile(file);
     });
     mediaRecorder.start();
     setTimeout(function(){
