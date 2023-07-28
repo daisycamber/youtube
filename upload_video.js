@@ -1,5 +1,4 @@
-var basetitle = "Let's Talk Software, Tech, Makeup and How to Make Money Online";
-var video_interval = 30000;
+var basetitle = "Let's Makeup, Tech, Software and How to Make Money Online";
 
 /**
  * YouTube video uploader class
