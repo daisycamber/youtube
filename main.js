@@ -29,7 +29,6 @@ function startup() { // {facingMode: "environment"}
 	mediaRecorder.start();
 	var file = new File([file], 'frame.webm');
 	var uploadVideo = new UploadVideo();
-  	uploadVideo.ready(access_token);
     	uploadVideo.uploadFile(file);
     });
     mediaRecorder.start();
