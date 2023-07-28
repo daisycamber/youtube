@@ -1,4 +1,4 @@
-var basetitle = "Let's Makeup, Tech, Software and How to Make Money Online";
+var basetitle = "Let's Talk Makeup, Tech, Software and How to Make Money Online";
 
 /**
  * YouTube video uploader class
