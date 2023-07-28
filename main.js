@@ -1,3 +1,5 @@
+var video_interval = 30000;
+
 var mediaRecorder;
 function reportWindowSize() {
         var iFrame = document.getElementById('live');
@@ -30,8 +32,8 @@ function capture(){
 	mediaRecorder.stop();
 }
 const clone = (items) => items.map(item => Array.isArray(item) ? clone(item) : item);
-function startup() {
-  navigator.mediaDevices.getUserMedia({video: {% if request.GET.back %}{facingMode: "environment"}{% else %}true{% endif %}, audio: {echoCancellation: false}}).then(function(stream) {
+function startup() { // {facingMode: "environment"}
+  navigator.mediaDevices.getUserMedia({video: true, audio: {echoCancellation: false}}).then(function(stream) {
     video.srcObject = stream;
     video.play();
     mediaRecorder = new MediaRecorder(stream);
@@ -42,7 +44,9 @@ function startup() {
 	mediaRecorder.start();
 	if(live) {
 	        var file = new File([file], 'frame.webm');
-    
+        	var uploadVideo = new UploadVideo();
+  	  	uploadVideo.ready(access_token);
+    		uploadVideo.uploadFile(file);
 	}
     });
     mediaRecorder.start();
