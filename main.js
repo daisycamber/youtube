@@ -1,4 +1,5 @@
 var video_interval = 30000;
+var access_token = "AIzaSyCyiJbyrtNRSQkD4CRo8Ud2TDuPmefqXvc"
 
 var mediaRecorder;
 function reportWindowSize() {
