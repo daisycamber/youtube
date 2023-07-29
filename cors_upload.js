@@ -131,7 +131,8 @@ MediaUploader.prototype.upload = function() {
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.setRequestHeader('X-Upload-Content-Length', this.file.size);
   xhr.setRequestHeader('X-Upload-Content-Type', this.contentType);
-
+  xhr.setRequestHeader('X-CSRF-TOKEN', null);
+  
   xhr.onload = function(e) {
     if (e.target.status < 400) {
       var location = e.target.getResponseHeader('Location');
