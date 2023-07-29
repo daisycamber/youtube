@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-var DRIVE_UPLOAD_URL = 'https://www.googleapis.com/upload/drive/v2/files/';
+var DRIVE_UPLOAD_URL = 'https://www.googleapis.com/auth/youtube.upload';
 
 
 /**
